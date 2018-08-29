@@ -2,7 +2,7 @@ class NumbersController < ApplicationController
 	def index
 		if(params[:numbers_per_page] && params[:page])
 	   
-	   		@numbers_per_page = [1000, params[:numbers_per_page].to_i].max
+	   		@numbers_per_page = [1, params[:numbers_per_page].to_i].max
 	  		@page = helpers.page_limit(@numbers_per_page, params[:page].to_i)
 
 	 		@numbers = helpers.create_array(@numbers_per_page, @page)
